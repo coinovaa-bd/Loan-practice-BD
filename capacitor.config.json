@@ -1,0 +1,6 @@
+{
+  "appId": "com.loanpracticebd.app",
+  "appName": "Loan Practice BD",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
