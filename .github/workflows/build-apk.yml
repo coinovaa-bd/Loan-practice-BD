@@ -18,11 +18,7 @@ jobs:
       - run: npx cap add android || true
       - run: npx cap sync android
                - run: |
-          for d in android/app/src/main/res/mipmap-*/; do
-            cp 5ce*.png "$d/ic_launcher.png"
-            cp 5ce*.png "$d/ic_launcher_round.png"
-            cp 5ce*.png "$d/ic_launcher_foreground.png"
-          done   
+                - run: for d in android/app/src/main/res/mipmap-*/; do cp 5ce*.png $d/ic_launcher.png; cp 5ce*.png $d/ic_launcher_round.png; cp 5ce*.png $d/ic_launcher_foreground.png; done  
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
