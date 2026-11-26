@@ -25,7 +25,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Sync Capacitor
-        run: npx cap sync android
+        run: |
+         npx cap add android
+         npx cap sync android
 
       - name: Copy launcher icons
         run: for d in android/app/src/main/res/mipmap-*/; do cp 5ce*.png $d/ic_launcher.png; cp 5ce*.png $d/ic_launcher_round.png; cp 5ce*.png $d/ic_launcher_foreground.png; done
